@@ -35,7 +35,7 @@
         <div class="filter" style="width: 20%; height: 100%; background-color: #f6fff8; overflow: auto; padding: 2%;">
             
             
-            <p>Sort BY:</p>
+            <p>Sort By:</p>
                 <label>
                     <input type="radio" value="price" v-model="sort">Price
                     <br>
@@ -306,7 +306,7 @@ let webstore = new Vue({
                             if (a.availability > b.availability)
                                 return 1;
                             
-                            if (a.price < b.price)
+                            if (a.availability < b.availability)
                                 return -1;
                             return 0;
                         }
