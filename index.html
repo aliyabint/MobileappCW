@@ -18,8 +18,8 @@
         
         <!-- Add the cart icon -->
         <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
+            <input type="text" v-model="searchQuery" placeholder="Search">
+            <button @click="performSearch">Search</button>
         </div>
         <div class="cicon" v-on:click="showCheckout" v-if="cartItemCount>0">
             <span>{{cartItemCount}}</span>
@@ -173,6 +173,7 @@ let webstore = new Vue({
         sitename: "ACTIVITIES",
         sort: "title",
         sortOrder:"ascending",
+        searchQuery: "",
         order: {
             firstName: "",
             lastName: "", 
@@ -225,9 +226,9 @@ let webstore = new Vue({
                 return count;
             },
 
-            
-            
-            
+            performSearch() {
+        this.sort = ""; // Clear any existing sorting when searching
+    },     
     },
 
 
@@ -343,6 +344,12 @@ let webstore = new Vue({
                             return productsArray.sort(compare).reverse();
                     }
             },
+
+            filteredProducts() {
+        return this.products.filter((product) =>
+            product.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+    }
         }});
 
 </script>
