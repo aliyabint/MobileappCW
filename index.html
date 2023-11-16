@@ -93,6 +93,9 @@
                             </div>
                             </div>
                         </div>
+
+
+                        
                         <div v-else>
                             <div class="cart-items">
                             <div v-for="product in cartProducts" style="margin: 10%; background-color: #cce3de; padding: 2%; border-radius: 2%; width: 20%;">
@@ -105,6 +108,7 @@
                                 <p>Price: {{product.price}} </p>
                                 <br>
                                 <p>Quantity: {{cartCount(product.id)}}</p>
+
                                 
                                 <div>
                                     <span v-for="n in product.rating">★</span>
@@ -114,6 +118,7 @@
                             </div>
                             <div class="checkout" style="margin: 2%; background-color: #a3b18a; padding: 2%; border-radius: 2%; width: 80%;">
                                 <h2 style="text-align: center;">Checkout</h2>
+
                                 <p>
                                     <strong>First Name: </strong>
                                     <!-- this input field is bound to firstname in the order object -->
@@ -173,7 +178,7 @@ let webstore = new Vue({
         sitename: "ACTIVITIES",
         sort: "title",
         sortOrder:"ascending",
-        searchQuery: "",
+        search: "",
         order: {
             firstName: "",
             lastName: "", 
@@ -261,6 +266,16 @@ let webstore = new Vue({
 
 
         sortedProducts(){
+            let tempCart = this.cart;
+                    function cartCount(id){
+                        let count = 0;
+                        for (let i=0; i< tempCart.length; i++){
+                            if (tempCart[i] === id){
+                                count++
+                            }
+                        }
+                        return count;
+                    }
                     let productsArray = this.products.slice(0);
                     if (this.sort === 'price' && this.sortOrder === 'ascending'){
                         function compare(a, b) {
@@ -304,20 +319,20 @@ let webstore = new Vue({
                             return productsArray.sort(compare).reverse();
                     }else if(this.sort === 'availability' && this.sortOrder === 'ascending'){
                         function compare(a, b) {
-                            if (a.availability > b.availability)
+                            if (a.availableInventory - cartCount(a.id)> b.availableInventory - cartCount(b.id))
                                 return 1;
                             
-                            if (a.availability < b.availability)
+                            if (a.availableInventory - cartCount(a.id) < b.availableInventory - cartCount(b.id))
                                 return -1;
                             return 0;
                         }
                             return productsArray.sort(compare);
                     }else if (this.sort === 'availability' && this.sortOrder === 'descending'){
                         function compare(a, b) {
-                            if (a.availability > b.availability)
+                            if (a.availableInventory - cartCount(a.id)> b.availableInventory - cartCount(b.id))
                                 return 1;
                             
-                            if (a.availability < b.availability)
+                            if (a.availableInventory - cartCount(a.id) < b.availableInventory - cartCount(b.id))
                                 return -1;
                             return 0;
                         }
