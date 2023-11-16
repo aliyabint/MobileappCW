@@ -6,6 +6,7 @@ let products =[
         price: 200,
         image:"images/dance.png",
         availableInventory: 10,
+        location: "Dubai",
         rating: 4
     
     },
@@ -16,6 +17,7 @@ let products =[
         price: 250,
         image:"images/art.png",
         availableInventory: 10,
+        location: "Abu Dhabi",
         rating: 4
     },
     {
@@ -25,6 +27,7 @@ let products =[
         price: 400,
         image:"images/basketball.png",
         availableInventory: 10,
+        location: "Sharjah",
         rating: 2
     
     },
@@ -35,6 +38,7 @@ let products =[
         price: 50.00,
         image:"images/sculpture.png",
         availableInventory: 10,
+        location: "Ras al khaimah",
         rating: 3
     },
     {
@@ -44,6 +48,7 @@ let products =[
         price: 20.00,
         image:"images/design.png",
         availableInventory: 10,
+        location: "Dubai",
         rating: 5
     
     },
@@ -54,6 +59,7 @@ let products =[
         price: 50.00,
         image:"images/coding.png",
         availableInventory: 10,
+        location: "Dubai",
         rating: 5
     },
     {
@@ -63,6 +69,7 @@ let products =[
         price: 50.00,
         image:"images/music.png",
         availableInventory: 10,
+        location: "Sharjah",
         rating: 1
     },
     {
@@ -72,6 +79,7 @@ let products =[
         price: 50.00,
         image:"images/photo.png",
         availableInventory: 10,
+        location: "Ras al khaimah",
         rating: 4
     },
     {
@@ -81,6 +89,7 @@ let products =[
         price: 50.00,
         image:"images/drama.png",
         availableInventory: 10,
+        location: "Al Ain",
         rating: 3
     },
     {
@@ -90,6 +99,7 @@ let products =[
         price: 50.00,
         image:"images/poetry.png",
         availableInventory: 10,
+        location: "Ras al khaimah",
         rating: 4
     }
 ]
