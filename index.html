@@ -238,7 +238,8 @@ let webstore = new Vue({
             },
 
             performSearch() {
-        this.searching = this.searchTerm.toLowerCase();
+        this.sortedProducts = this.products.filter(product =>
+        product.title.toLowerCase().includes(this.searching.toLowerCase()));
 
     }, 
     removeProduct(id) {
@@ -384,16 +385,12 @@ let webstore = new Vue({
                             return productsArray.sort(compare).reverse();
                     }
             },
-            filteredProducts() {
-        const searchTerm = this.searching.toLowerCase();
-        return this.products.filter((product) =>
-            product.title.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm)
-        );
-            }
 
-           
-    
+            filteredProducts() {
+        return this.products.filter((product) =>
+            product.title.toLowerCase().includes(this.searching.toLowerCase())
+        );
+    }
         }});
 
 </script>
