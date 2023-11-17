@@ -238,7 +238,9 @@ let webstore = new Vue({
             },
 
             performSearch() {
-        this.sort = ""; // Clear any existing sorting when searching
+        this.sortedProducts = this.products.filter(product =>
+        product.title.toLowerCase().includes(this.searching.toLowerCase()));
+
     }, 
     removeProduct(id) {
         let found = false
