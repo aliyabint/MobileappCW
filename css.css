@@ -78,11 +78,14 @@ body {
     flex-wrap: wrap;
 }
 
-.sort-section {
-    background-color: #eaeaea;
+.sort{
+    background-color:  #cce3de;
+    border-radius: 15%;
+    width: 70%;
+    padding: 5%;
+    font-family:Bradley Hand, cursive;
 }
-
-
-
-
+.addbutton.button{
+    background-color: #1b4332;
+}
 
