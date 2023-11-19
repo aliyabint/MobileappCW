@@ -16,10 +16,9 @@
     <div class="navbar">
         <img src="images/header2.png" alt="Navigation Image">
         
-        <!-- Add the cart icon -->
         <div class="search-bar">
             <input type="text" v-model="searching" placeholder="Search">
-            <!-- <button ="performSearch">Search</button> -->
+            
         </div>
         <div class="cicon" v-on:click="showCheckout" v-if="cartItemCount>0">
             <span>{{cartItemCount}}</span>
@@ -268,7 +267,7 @@ let webstore = new Vue({
         },
         placeOrder: function(){
             this.orderPlaced = true;
-            alert("Order Submitted!!!!");
+            alert("Your order has been submitted, Thank You for your order. We will get back to you soon.");
              window.location.href = "index.html";
         },
         cartCount(id){
