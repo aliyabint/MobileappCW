@@ -34,7 +34,7 @@
     <div style="display: flex; height: 100vh; width: 100%; background-color:black;">
         <div class="filter" style="width: 20%; height: 100%; background-color: #f6fff8; overflow: auto; padding: 2%;">
             
-            
+            <div class="sort">
             <p>Sort By:</p>
                 <label>
                     <input type="radio" value="price" v-model="sort">Price
@@ -50,6 +50,8 @@
                     <input type="radio" value="ascending" v-model="sortOrder">Ascending 
                     <input type="radio" value="descending" v-model="sortOrder">Desending 
                 </label>
+
+                </div>
 
             
         </div> 
@@ -81,13 +83,14 @@
                                 
                                 <br>
                                 
-                                
+                                <div class="addbutton">
                                 <button v-on:click="addToCart(product)" v-if="canAddToCart(product)" >
                                     Add to Cart
                                 </button>
                                 <button disabled="disabled" v-else>
                                     Add to Cart
                                 </button>
+                                </div>
                         
                                 <span v-if='product.availableInventory === cartCount(product.id)'>All out!</span>
                                 <span v-else-if="product.availableInventory - cartCount(product.id)<10">
