@@ -21,7 +21,7 @@ body {
 /* Style the div below the navbar */
 
 .navbar img {
-    width: 180px; /* Set the desired width */
+    width: 250px; /* Set the desired width */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
     margin-right: 10px; /* Adjust margin as needed */
 }
@@ -56,21 +56,12 @@ body {
 }
 
 .search-bar input {
-    height: 20px;
-    width: 450px;
+    height: 40px;
+    width: 1000px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-right: 10px;
-}
-
-.search-bar button {
-    background-color: #344e41;
-    color: #dad7cd;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
 }
 
 .cart-items {
